@@ -23,12 +23,11 @@ jobs:
       - name: set up node jobs
         uses: actions/setup-node@v2
         with: 
-          node-vesion: 14
+          node-version: 14
       - name: build site
         run: |
           npm ci
           npm run build
-          npm audit fix --force
       - name: deploy the site to s3 bucket
         run: aws s3 cp public s3://${{ env.BUCKET_NAME }}/ --recursive --acl public-read
 
