@@ -4,7 +4,7 @@ name: Deploy my feature branch to nonprod bucket
 on:
   push:
     branches:
-      - feature-*
+      - feature*
   
 jobs:
   build:
